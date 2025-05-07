@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baby Register Rwanda - Homepage</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      height: 100%;
+    }
+
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .brand-text-logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .brand-text-logo .baby {
+      color: #00b4d8;
+    }
+
+    .brand-text-logo .register {
+      color: #ffffff;
+    }
+
+    .brand-text-logo .rwanda {
+      color: #90e0ef;
+    }
+
+    nav {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-left {
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    .nav-right {
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .hero-section {
+      position: relative;
+      background: url('de.jpg') center/cover no-repeat;
+      color: white;
+      padding: 4rem 2rem;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .hero-section h1,
+    .hero-section p,
+    .hero-section .cta-button {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      padding: 15px 25px;
+      background-color: #023e8a;
+      color: white;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .cta-button:hover {
+      background-color: #00509d;
+    }
+
+    .feature-section {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      margin: 10px;
+    }
+
+    .feature-card h3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 1.3rem;
+    }
+
+    .feature-card h3 .icon {
+      font-size: 1.4rem;
+    }
+
+    footer {
+      background-color: #0077b6;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .feature-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .feature-card {
+        width: 80%;
+      }
+
+      header, nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
+      .brand-text-logo {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <div class="brand-text-logo">
+        <span class="baby">Baby</span><span class="register">Register</span> <span class="rwanda">Rwanda</span>
+      </div>
+
+      <nav>
+        <div class="nav-left">
+          <a href="index.html">Home</a>
+          <a href="register.html">Register</a>
+          <a href="status.html">Check Status</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="policy.html">Privacy Policy</a>
+          <a href="termsandservices.html">Terms of Service</a>
+          <a href="report.html">Report</a>
+          <a href="login.html">Login</a>
+
+        </div>
+        <div class="nav-right">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://babyregister.rw" target="_blank">Facebook</a>
+          <a href="https://twitter.com/intent/tweet?text=Register%20your%20baby%20on%20BabyRegister%20Rwanda!%20https://babyregister.rw" target="_blank">Twitter</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <h1>Welcome to BabyRegister Rwanda</h1>
+        <p>Register your newborn and get the official certificate in just a few steps. Ensure your child's identity from birth!</p>
+        <button type="button" class="cta-button" onclick="window.location.href='login.html'">Start Registration</button>
+      </section>
+
+      <section class="feature-section">
+        <div class="feature-card">
+          <h3><span class="icon">📝</span>Easy Registration</h3>
+          <p>Simple, fast, and efficient registration process with step-by-step guidance.</p>
+        </div>
+        <div class="feature-card">
+          <h3><span class="icon">🔒</span>Secure Data</h3>
+          <p>Your baby’s registration details are securely stored and protected.</p>
+        </div>
+        <div class="feature-card">
+          <h3><span class="icon">🌐</span>Access Anytime</h3>
+          <p>Access your baby's registration information whenever you need it from anywhere.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 BabyRegister Rwanda. All Rights Reserved.</p>
+      <p>
+        <a href="policy.html">Privacy Policy</a> |
+        <a href="termsandservices.html">Terms of Service</a> |
+        <a href="contact.html">Contact Us</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

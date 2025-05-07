@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Check Status - Baby Register Rwanda</title>
+  
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Ensures footer stays at the bottom */
+    }
+
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 1rem 2rem;
+    }
+
+    .brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: auto;
+      flex-grow: 1; /* Allows the main content to take up remaining space */
+    }
+
+    .status-section {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .status-message {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #e5e5e5;
+      border-radius: 5px;
+      text-align: center;
+      display: none;
+    }
+
+    .loading {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+      color: #0077b6;
+      display: none;
+    }
+
+    .loader {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #0077b6;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    footer {
+      background-color: #0077b6;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header class="d-flex justify-content-between align-items-center">
+    <div class="brand">BabyRegister Rwanda</div>
+    <nav class="w-100">
+      <div class="d-flex justify-content-center w-100">
+        <a class="text-white mx-2" href="index.html">Home</a>
+        <a class="text-white mx-2" href="register.html">Register</a>
+        <a class="text-white mx-2" href="Status.html">Check Status</a>
+        <a class="text-white mx-2" href="Contact.html">Contact</a>
+        <a class="text-white mx-2" href="Login.html">Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="status-section">
+      <h2 class="text-center mb-4">Check Registration Status</h2>
+      <form id="checkStatusForm">
+        <div class="form-group">
+          <label for="referenceNumber">Enter Reference Number:</label>
+          <input type="text" class="form-control" id="referenceNumber" name="referenceNumber" required placeholder="Enter your reference number">
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Check Status</button>
+      </form>
+      <div id="loading" class="loading">
+        <p>Loading...</p>
+        <div class="loader"></div>
+      </div>
+      <div id="statusMessage" class="status-message">
+        <h3>Status: <span id="statusText"></span></h3>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BabyRegister Rwanda. All Rights Reserved.</p>
+    <p>
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Service</a> |
+      <a href="#">Contact Us</a>
+    </p>
+  </footer>
+
+  <!-- Bootstrap JS and Popper.js (CDN) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    document.getElementById("checkStatusForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const referenceNumber = document.getElementById("referenceNumber").value;
+
+      if (referenceNumber === "") {
+        alert("Please enter a reference number.");
+        return;
+      }
+
+      const statusMessage = document.getElementById("statusMessage");
+      const statusText = document.getElementById("statusText");
+      const loading = document.getElementById("loading");
+
+      loading.style.display = "block";
+      statusMessage.style.display = "none";
+
+      setTimeout(function() {
+        loading.style.display = "none";
+
+        if (referenceNumber === "Denis") {
+          statusText.innerText = "Approved and Processed";
+          statusMessage.style.display = "block";
+        } else {
+          statusText.innerText = "Not Found. Please check the reference number again.";
+          statusMessage.style.display = "block";
+        }
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
